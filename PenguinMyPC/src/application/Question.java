@@ -1,7 +1,7 @@
 package application;
 
 import java.util.ArrayList;
-
+//This is the question class
 public class Question {
 	private int numberOfChoices;
 	private String questionText;
