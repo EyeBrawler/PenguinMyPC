@@ -3,13 +3,12 @@ package application;
 import java.util.ArrayList;
 //This is the question class
 public class Question {
-	private int numberOfChoices;
 	private String questionText;
 	private ArrayList<String> choicesTextList = new ArrayList<>();
 	private ArrayList<Integer> choicesValueList = new ArrayList<>();
 	
 	public Question () {
-		
+	
 	}
 	
 	public void addChoiceText(String choiceText) {

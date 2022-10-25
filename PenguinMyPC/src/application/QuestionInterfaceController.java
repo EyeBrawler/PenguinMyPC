@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -91,7 +90,7 @@ public class QuestionInterfaceController {
  		
 		//Try Catch For Questions
 		try {
-			File questionsFile = new File("./src/application/Questions.txt");
+			File questionsFile = new File("./PenguinMyPC/src/application/Questions.txt");
 			Scanner questionsScanner = new Scanner(questionsFile);			
 			
 			while(questionsScanner.hasNextLine()) {
@@ -113,7 +112,7 @@ public class QuestionInterfaceController {
 		
 		//Try Catch For Choices
 		try {
-			File choicesFile = new File("./src/application/AnswerChoices.txt");
+			File choicesFile = new File("./PenguinMyPC/src/application/AnswerChoices.txt");
 			Scanner choicesScanner = new Scanner(choicesFile);
 			
 			while(choicesScanner.hasNextLine()) {
