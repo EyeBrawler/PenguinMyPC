@@ -1,9 +1,7 @@
 package application;
 
-//import java.io.File;
-import java.io.IOException;
-//import java.util.Scanner;
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -12,11 +10,6 @@ import javafx.scene.web.WebView;
 import javafx.scene.control.Alert.AlertType;
 
 public class BackgroundSceneController {
-	
-	
-	
-	//@FXML
-	//private TextArea backgroundTextArea;
 	
 	@FXML
 	private WebView webView;
@@ -28,7 +21,6 @@ public class BackgroundSceneController {
 	private SceneSwitcher sceneSwitcher = new SceneSwitcher();
 	
 	public void initialize() {
-		//loadText();
 		engine = webView.getEngine();
 		loadPage();
 	}
@@ -46,32 +38,6 @@ public class BackgroundSceneController {
 
 		alert.showAndWait();
 	}
-	
-	/*
-	public void loadText() {
-		//Load Text Area Text from TXT File
-	
-		try {
-			File backgroundTextFile = new File("./src/application/backgroundText.txt");
-			Scanner txtScanner = new Scanner(backgroundTextFile);
-			
-			while(txtScanner.hasNext()) {
-				backgroundTextArea.appendText(txtScanner.nextLine() + "\n");
-	
-			}
-			
-			txtScanner.close();
-			
-		}
-		catch(Exception ex) {
-			System.err.println(ex);
-			ex.printStackTrace();
-		}			
-			
-	
-		
-	}
-	*/
 	
 	public void questionSceneSwitch (ActionEvent event) throws IOException {
 		sceneSwitcher.setFXML("QuestionScene.fxml");
