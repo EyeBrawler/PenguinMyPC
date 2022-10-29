@@ -39,7 +39,7 @@ public class BackgroundSceneController {
 		alert.showAndWait();
 	}
 	
-	public void questionSceneSwitch (ActionEvent event) throws IOException {
+	public void questionSceneSwitch(ActionEvent event) throws IOException {
 		sceneSwitcher.setFXML("QuestionScene.fxml");
 		sceneSwitcher.switchScene(event);
 	

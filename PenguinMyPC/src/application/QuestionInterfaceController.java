@@ -1,11 +1,13 @@
 package application;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -27,6 +29,7 @@ public class QuestionInterfaceController {
 	@FXML 
 	private Button nextButton;
 	
+	private SceneSwitcher sceneSwitcher = new SceneSwitcher();
 	private ArrayList<RadioButton> radioButtonList = new ArrayList<>();
 	private ArrayList<Question> questionList = new ArrayList<>();
 	
@@ -78,6 +81,7 @@ public class QuestionInterfaceController {
 		
 		//Loading First Question
 		loadNextQuestion();
+		
 		
 		
 	}
@@ -238,6 +242,8 @@ public class QuestionInterfaceController {
 		System.out.println("Final Scene");
 		System.out.println(score);
 		System.out.println(questionList.size());
+		sceneSwitcher.setFXML("FinalResultsScene.fxml");
+		//sceneSwitcher.switchScene(event);
 	
 	}
 	
