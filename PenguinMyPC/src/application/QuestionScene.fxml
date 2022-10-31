@@ -35,7 +35,7 @@
       </VBox>
       <HBox alignment="BOTTOM_RIGHT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button fx:id="finalResultsButton" mnemonicParsing="false" onAction="#finalResultsSceneSwitch" text="Final Results" visible="false">
+            <Button fx:id="finalResultsButton" mnemonicParsing="false" onAction="#finalResultsSceneSwitch" text="See Final Results" visible="false">
                <HBox.margin>
                   <Insets bottom="20.0" right="20.0" />
                </HBox.margin>

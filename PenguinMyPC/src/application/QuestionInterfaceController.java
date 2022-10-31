@@ -159,14 +159,16 @@ public class QuestionInterfaceController {
 		nextButton.setDisable(true);
 		
 		if(currentQuestionNumber == numberOfQuestions) {
-			nextButton.setText("See Final Results");
+			nextButton.setText("Submit All Answers");
+			
+		}
+		
+		//Saving response from previous question if possible
+		if(radioButtonGroup.getSelectedToggle() != null) {
+			saveAnswerChoice();
 		}
 		
 		if(currentQuestionNumber <= numberOfQuestions) {
-			//Saving response from previous question if possible
-			if(radioButtonGroup.getSelectedToggle() != null) {
-				saveAnswerChoice();
-			}
 			
 			//Clearing Selection from Previous Question
 			radioButtonGroup.selectToggle(null);
@@ -195,7 +197,8 @@ public class QuestionInterfaceController {
 			
 		} else {
 			finalResultsButton.setVisible(true);
-			nextButton.setVisible(false);
+			nextButton.setDisable(true);
+			
 		}
 		
 		
@@ -206,8 +209,10 @@ public class QuestionInterfaceController {
 		//Not Saving Choice For Last Question Seen
 		//Not Loading Last Question
 		
+		/*
 		for(int i = 0; i < questionList.get(currentQuestionNumber - 1).getNumberOfChoices(); i++) {
 			System.out.println("Choice " + i + " = " + questionList.get(currentQuestionNumber - 1).getChoiceValue(i));
+			
 			if(radioButtonList.get(i).isSelected()) {
 				
 				System.out.println("inside if statement");
@@ -215,7 +220,16 @@ public class QuestionInterfaceController {
 				score += questionList.get(currentQuestionNumber - 1).getChoiceValue(i);
 				break;
 			}
+			
 		}
+		*/
+		
+		
+		System.out.println("Question " + (currentQuestionNumber - 1));
+		for(int j = 0; j < questionList.get(currentQuestionNumber - 2).getNumberOfChoices(); j++) {
+			System.out.println("Choice " + j + " = " + questionList.get(currentQuestionNumber - 2).getChoiceValue(j));
+		}
+			
 		
 	}
 	
