@@ -27,7 +27,11 @@ public class QuestionInterfaceController {
 	private VBox questionVBox;
 	
 	@FXML 
+	private Button finalResultsButton;
+
+	@FXML
 	private Button nextButton;
+	
 	
 	private SceneSwitcher sceneSwitcher = new SceneSwitcher();
 	private ArrayList<RadioButton> radioButtonList = new ArrayList<>();
@@ -158,34 +162,40 @@ public class QuestionInterfaceController {
 			nextButton.setText("See Final Results");
 		}
 		
-		if(currentQuestionNumber < numberOfQuestions) {
+		if(currentQuestionNumber <= numberOfQuestions) {
+			//Saving response from previous question if possible
 			if(radioButtonGroup.getSelectedToggle() != null) {
 				saveAnswerChoice();
 			}
 			
+			//Clearing Selection from Previous Question
 			radioButtonGroup.selectToggle(null);
 			
-			if(questionList.get(currentQuestionNumber).getNumberOfChoices() != radioButtonList.size()) {
+			//Hiding Unused Buttons for Question
+			if(questionList.get(currentQuestionNumber - 1).getNumberOfChoices() != radioButtonList.size()) {
 				for(int i = questionList.get(currentQuestionNumber - 1).getNumberOfChoices(); i < radioButtonList.size(); i++) {
 					radioButtonList.get(i).setVisible(false);
 				}
 			} 
 			
+			//Setting Question Text
 			questionLabel.setText(questionList.get(currentQuestionNumber - 1).getQuestionText());
 			
+			//Setting Text for Choices
 			for(int i = 0; i < questionList.get(currentQuestionNumber - 1).getNumberOfChoices(); i++) {
 				radioButtonList.get(i).setText(questionList.get(currentQuestionNumber - 1).getChoiceText(i));
 				
 			}
 			
-			if(currentQuestionNumber < numberOfQuestions) {
-				currentQuestionNumber++;
-			}
+			//Incrementing Question
+			currentQuestionNumber++;
+			
 			
 			
 			
 		} else {
-			finalResultsSceneSwitch();
+			finalResultsButton.setVisible(true);
+			nextButton.setVisible(false);
 		}
 		
 		
@@ -197,9 +207,11 @@ public class QuestionInterfaceController {
 		//Not Loading Last Question
 		
 		for(int i = 0; i < questionList.get(currentQuestionNumber - 1).getNumberOfChoices(); i++) {
+			System.out.println("Choice " + i + " = " + questionList.get(currentQuestionNumber - 1).getChoiceValue(i));
 			if(radioButtonList.get(i).isSelected()) {
 				
 				System.out.println("inside if statement");
+				
 				score += questionList.get(currentQuestionNumber - 1).getChoiceValue(i);
 				break;
 			}
@@ -238,12 +250,12 @@ public class QuestionInterfaceController {
 		
 	}
 	
-	public void finalResultsSceneSwitch() {
+	public void finalResultsSceneSwitch(ActionEvent event) throws IOException {
 		System.out.println("Final Scene");
 		System.out.println(score);
 		System.out.println(questionList.size());
 		sceneSwitcher.setFXML("FinalResultsScene.fxml");
-		//sceneSwitcher.switchScene(event);
+		sceneSwitcher.switchScene(event);
 	
 	}
 	

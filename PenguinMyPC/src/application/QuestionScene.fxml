@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.QuestionInterfaceController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.QuestionInterfaceController">
    <children>
       <MenuBar layoutY="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <menus>
@@ -25,7 +25,7 @@
          <children>
             <Label fx:id="questionLabel" text="Label">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
                <VBox.margin>
                   <Insets left="20.0" top="10.0" />
@@ -35,6 +35,11 @@
       </VBox>
       <HBox alignment="BOTTOM_RIGHT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
+            <Button fx:id="finalResultsButton" mnemonicParsing="false" onAction="#finalResultsSceneSwitch" text="Final Results" visible="false">
+               <HBox.margin>
+                  <Insets bottom="20.0" right="20.0" />
+               </HBox.margin>
+            </Button>
             <Button fx:id="nextButton" mnemonicParsing="false" onAction="#loadNextQuestion" text="Next Question">
                <HBox.margin>
                   <Insets bottom="20.0" right="20.0" />
