@@ -20,7 +20,7 @@
               </items>
             </Menu>
          </menus></MenuBar>
-      <VBox fx:id="questionVBox" alignment="TOP_CENTER" layoutY="28.0" prefHeight="195.0" prefWidth="104.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+      <VBox alignment="TOP_CENTER" layoutY="28.0" prefHeight="195.0" prefWidth="104.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
          <children>
             <Label text="Your Final Results">
                <font>
@@ -29,6 +29,22 @@
                <VBox.margin>
                   <Insets left="20.0" top="10.0" />
                </VBox.margin>
+            </Label>
+            <Label fx:id="scoreLabel" text="Label">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="resultsMessageLabel" text="Label">
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </Label>
          </children>
       </VBox>

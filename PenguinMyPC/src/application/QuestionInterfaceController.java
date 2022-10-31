@@ -9,6 +9,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -39,10 +40,8 @@ public class QuestionInterfaceController {
 	
 	private int currentQuestionNumber;
 	private int numberOfQuestions;
-	private int score = 0;
+	public static int score = 0;
 	private ToggleGroup radioButtonGroup;
-	
-	
 	
 	
 	public void about() {
@@ -63,8 +62,10 @@ public class QuestionInterfaceController {
 		questionVBox.getChildren().addAll(radioButtonList);
 		radioButtonGroup = new ToggleGroup();
 		
+		//Adding all Radio Buttons to Toggle Group and adding some formatting
 		for(RadioButton radioButton : radioButtonList) {
 			radioButton.setToggleGroup(radioButtonGroup);
+			VBox.setMargin(radioButton, new Insets(0,0,20,0));
 		}
 		
 		//Code to make button changes on selection
@@ -206,29 +207,25 @@ public class QuestionInterfaceController {
 	}
 	
 	public void saveAnswerChoice() {
-		//Not Saving Choice For Last Question Seen
-		//Not Loading Last Question
 		
-		/*
-		for(int i = 0; i < questionList.get(currentQuestionNumber - 1).getNumberOfChoices(); i++) {
-			System.out.println("Choice " + i + " = " + questionList.get(currentQuestionNumber - 1).getChoiceValue(i));
+		//Loop that looks through the choices and finds selected choice to add to the score
+		for(int i = 0; i < questionList.get(currentQuestionNumber - 2).getNumberOfChoices(); i++) {
 			
 			if(radioButtonList.get(i).isSelected()) {
 				
-				System.out.println("inside if statement");
-				
-				score += questionList.get(currentQuestionNumber - 1).getChoiceValue(i);
+				score += questionList.get(currentQuestionNumber - 2).getChoiceValue(i);
 				break;
 			}
 			
 		}
-		*/
 		
-		
+		//Test Code for Printing Avaible Answer Choices and Questions
+		/*
 		System.out.println("Question " + (currentQuestionNumber - 1));
 		for(int j = 0; j < questionList.get(currentQuestionNumber - 2).getNumberOfChoices(); j++) {
 			System.out.println("Choice " + j + " = " + questionList.get(currentQuestionNumber - 2).getChoiceValue(j));
 		}
+		*/
 			
 		
 	}
@@ -265,9 +262,6 @@ public class QuestionInterfaceController {
 	}
 	
 	public void finalResultsSceneSwitch(ActionEvent event) throws IOException {
-		System.out.println("Final Scene");
-		System.out.println(score);
-		System.out.println(questionList.size());
 		sceneSwitcher.setFXML("FinalResultsScene.fxml");
 		sceneSwitcher.switchScene(event);
 	

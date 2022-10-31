@@ -1,7 +1,7 @@
 My job							~-1~	Personal business (personal email, documents, taxes)								~1~Gaming!~-2~	Everything.	~0~
 Google Chrome						~1~	Microsoft Edge													~1~Firefox~1~	Something else	~1~
-I can’t do without Microsoft Office			~-2~	If there was a piece of software that was equivalent to Microsoft Office I think I could use it.		~1~
+I can’t do without Microsoft Office.			~-2~	If there was a piece of software that was equivalent to Microsoft Office I think I could use it.		~1~
 Yes							~-1~	No														~1~
 Definitely						~-1~	Not At All													~2~
-Yes							~1~	No														~-1~
-All I plug into my computer is a keyboard and mouse. :)	~1~	I have all of the equipment in the world to plug into my computer (obscure scanners and digital cameras)	~-1~
+Most of the time all I plug into my computer is a keyboard and mouse. :)	~1~	I have all of the special equipment in the world I need to plug into my computer.	~-2~
+Yes							~1~	No														~-2~

@@ -24,12 +24,12 @@
       <VBox fx:id="questionVBox" layoutY="28.0" prefHeight="195.0" prefWidth="104.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
          <children>
             <Label fx:id="questionLabel" text="Label">
-               <font>
-                  <Font size="18.0" />
-               </font>
                <VBox.margin>
-                  <Insets left="20.0" top="10.0" />
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
             </Label>
          </children>
       </VBox>
